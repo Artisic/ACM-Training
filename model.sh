@@ -34,13 +34,15 @@ $objfile : $codefile
 	g++ -c $codefile
 .PHONY : clean
 clean : 
-	rm $objfile
+	rm $objfile a
 ">>$makefile
 echo "#include<iostream>
 #include<algorithm>
 #include<cstdio>
+#include<cstdlib>
+#include<cstring>
 #include<fstream>
-
+//#include<sstream>
 
 using namespace std;
 #define Debug
@@ -53,6 +55,9 @@ ifstream fin(\"$testfile\");
 #define in cin
 #endif
 //******************************
+#define  MZ(a) memset(a,0,sizeof(a));
+#define  MF(a) memset(a,-1,sizeof(a));
+
 
 int main()
 {
